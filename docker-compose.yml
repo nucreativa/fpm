@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+  fpm:
+    build:
+      context: .
+    ports:
+      - 9000:9000
+    container_name: 'nucreativa/fpm'

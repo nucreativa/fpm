@@ -7,6 +7,11 @@ Custom FastCGI Process Manager (FPM) that support my needs.
 * Redis support
 * Memcached support
 
+### PHP 7.2
+```shell script
+docker pull nucreativa/fpm:7.2
+```
+
 ### PHP 7.3
 ```shell script
 docker pull nucreativa/fpm:7.3

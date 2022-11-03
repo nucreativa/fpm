@@ -33,7 +33,8 @@ RUN apt-get update \
         openssl \
         libzip-dev \
         unixodbc-dev \
-        mariadb-client
+        mariadb-client \
+		libldap2-dev 
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- \
@@ -44,6 +45,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- \
 RUN docker-php-ext-configure gd --with-jpeg=/usr/include/ --with-freetype=/usr/include/ \
     && docker-php-ext-configure pdo_dblib --with-libdir=/lib/x86_64-linux-gnu \
     && docker-php-ext-configure intl \
+	&& docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ \
     && pecl install redis \
     && pecl install memcached \
     && pecl install xdebug \
@@ -63,6 +65,7 @@ RUN docker-php-ext-configure gd --with-jpeg=/usr/include/ --with-freetype=/usr/i
             pcntl \
             ftp \
             bcmath \
+			ldap \
     && docker-php-ext-enable \
             redis \
             memcached \

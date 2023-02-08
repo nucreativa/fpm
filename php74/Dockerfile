@@ -48,7 +48,7 @@ RUN docker-php-ext-configure gd --with-jpeg=/usr/include/ --with-freetype=/usr/i
 	&& docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ \
     && pecl install redis \
     && pecl install memcached \
-    && pecl install xdebug \
+    && pecl install xdebug-3.1.6 \
     && pecl install imagick \
     && pecl install mcrypt-1.0.3 \
     && docker-php-ext-install \
